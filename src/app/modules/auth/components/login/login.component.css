@@ -7,12 +7,15 @@
 
 body {
   min-height: 100vh;
+  margin: 0; /* Elimina los márgenes predeterminados */
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #7d2ae8;
-  padding: 30px;
+  background: url('../../../../../assets/imgs/wallp.jpg') no-repeat center center fixed;
+  background-size: cover; /* Cubre toda la pantalla */
+  padding: 0; /* Elimina el relleno predeterminado */
 }
+
 
 .container {
   position: relative;
@@ -40,6 +43,12 @@ body {
   transform: rotateY(-180deg);
 }
 
+html, body {
+  height: 100%;
+  margin: -20px;
+  padding: -5%;
+}
+
 .container .cover .front,
 .container .cover .back {
   position: absolute;
@@ -50,7 +59,7 @@ body {
   backface-visibility: visible;
 }
 
-.cover .back {
+.container .cover .back {
   transform: rotateY(180deg);
   background: url('../../../../../assets/imgs/foto1.jpg') no-repeat center center;
   background-size: cover;
