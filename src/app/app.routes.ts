@@ -10,7 +10,7 @@ export const routes: Routes = [
   {path : '',component : LoginComponent},
   {path : 'home', component : HomeComponent},
   {path : 'about-me', component : AboutMeComponent},
-  {path : 'register', component : RegisterComponent},
+  {path : 'register', component : LoginComponent},
 ];
 
 @NgModule({
