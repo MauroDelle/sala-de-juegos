@@ -13,21 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./about-me.component.css']
 })
 export class AboutMeComponent {
-  // Propiedad para controlar la rotación del círculo
-  rotationDegree: number = 0;
-
-  showHeader = true; // Variable para controlar si se muestra el header
-  constructor() { }
-  
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const currentScroll = window.scrollY || document.documentElement.scrollTop;
-    // Si el scroll es mayor a 0, ocultamos el header; de lo contrario, lo mostramos
-    this.showHeader = currentScroll <= 0;
-  }
 
 
   
-
 }
-

@@ -10,19 +10,18 @@ import { CommonModule, NgComponentOutlet } from '@angular/common';
 })
 export class HomeComponent {
 
-  gameNames: string[] = ["Buscaminas", "Nombre del Juego 2", "Nombre del Juego 3", "Nombre del Juego 4"];
 
+  loadingAboutMe: boolean = false;
 
-  highlightedGameIndex: number | null = null;
+  constructor() { }
 
-  highlightGame(index: number) : void {
-
-    this.highlightedGameIndex = index;
+  loadAboutMe() {
+    this.loadingAboutMe = true; // Activar la animación de carga
+    setTimeout(() => {
+      this.loadingAboutMe = false; // Desactivar la animación después de 2 segundos (simulado)
+    }, 2000);
   }
 
-  removeHighlight() : void {
-    this.highlightedGameIndex = null;
-  }
 
 
 }

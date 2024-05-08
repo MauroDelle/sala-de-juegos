@@ -1,10 +1,10 @@
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color:#7d2ae8; /* Cambiamos el color del texto a blanco */
+    font-family: 'Pixelify Sans', sans-serif;
+    margin-top: 80px;
+    padding: 10px;
+    color: #fff; /* Cambiamos el color del texto a blanco */
     margin: -8px;
+    background: url('../../../../assets/imgs/wallp.jpg');
 }
 
 .container {
@@ -15,37 +15,94 @@ body {
 
 /* Estilos para el encabezado */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px 10px 0 0;
     position: fixed;
-    top: 0;
-    width: 100%;
+    top: 10px;
+    left: 0;
     z-index: 1000;
-    height: 50px;
-    transition: top 100s;
-  }
-  
-  header.hidden {
-    top: -5px;
-  }
-  
-
-
-header h1 {
-    margin: 0;
+    background-color: #7d2ae8;
+    color: #341144;
+    padding: 10px 20px; /* Aumentamos el espacio interior */
+    margin: 10px; /* Eliminamos el margen superior e inferior */
+    border-radius: 20px;
+    font-family: 'Pixelify Sans', sans-serif;
+    position: relative;
+    overflow: hidden;
+    animation: wave 2s infinite alternate;
+    box-shadow: 0 0 10px rgba(191, 46, 244, 0.5);
+    transition: top 0.3s;
 }
 
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Coloca "Arcade Center" a la izquierda y el nav a la derecha */
+    align-items: center;
+}
+
+
+@keyframes wave {
+    0% {
+        border-radius: 30px; /* Inicio de la animación: borde normal */
+    }
+    50% {
+        border-radius: 50px; /* Mitad de la animación: borde redondeado */
+    }
+    100% {
+        border-radius: 20px; /* Fin de la animación: borde normal */
+    }
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; /* Controla la distancia de la ola desde la parte inferior del header */
+    left: 0;
+    width: 100%;
+    height: 100px; /* Altura de la ola */
+    background-color: #7d2ae8; /* Color de fondo de la ola */
+    border-radius: 50%; /* Crea la forma de ola */
+}
+
+/* Estilo para el pseudo-elemento ::before que crea el efecto de segunda ola */
+header::before {
+    content: '';
+    position: absolute;
+    bottom: -100px; /* Controla la distancia de la segunda ola desde la parte inferior del header */
+    left: 0;
+    width: 100%;
+    height: 150px; /* Altura de la segunda ola */
+    background-color: #7d2ae8; /* Color de fondo de la segunda ola */
+    border-radius: 50%; /* Crea la forma de la segunda ola */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; /* Eliminamos el relleno para que los enlaces estén juntos */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #341144;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px; /* Reducimos el tamaño de la fuente */
+    margin-left: 14px;
+    padding-right:20px; /* Añadimos un margen izquierdo para separar los enlaces */
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* Eliminamos el margen izquierdo del primer enlace */
+}
+  
 /* Estilos para la sección "About Me" */
 .about-me {
-    background-color: #7d2ae8;
-    padding: 100px 0;
-    background: url('../../../../assets/imgs/wallp.jpg');
+    padding: 50px 0;
     background-size: cover; /* Cubre todo el cuerpo */
     background-position: center; /* Centra la imagen */
-    
 }
 
 .profile-picture img {
@@ -53,7 +110,7 @@ header h1 {
     width: 200px;
     height: 200px;
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto 30px;
 }
 
 .description {
@@ -65,33 +122,7 @@ header h1 {
     margin-bottom: 10px;
 }
 
-
 .description p {
     font-size: 16px;
     line-height: 1.6;
-    color:rgb(149, 39, 179);
-}
-
-
-/* Estilos para el pie de página */
-footer {
-    position: fixed; /* Posición fija para anclarlo a la parte inferior */
-    bottom: 0; /* Lo colocamos en la parte inferior */
-    width: 100%; /* Ancho completo */
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-
-
-
-footer a {
-    color: #7d2ae8;;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }

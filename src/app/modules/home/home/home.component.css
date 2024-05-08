@@ -1,13 +1,14 @@
 body {
     margin: -10px;
-    padding: 0px;
+    padding: -10px;
     font-size: 20px;
     font-family: 'Pixelify Sans', sans-serif;
     background-image: url('../../../../assets/imgs/wallp.jpg');
     background-color: #3f244b;
     background-size: cover;
-    background-position: center;
+    background-position: inherit;
     background-attachment: fixed;
+    
 }
 
 
@@ -49,6 +50,7 @@ header {
         border-radius: 20px; /* Fin de la animación: borde normal */
     }
 }
+
 
 
 .header-content {
@@ -106,7 +108,7 @@ main {
 .game {
     padding: 20px;
     height: 250px;
-    background-color: #fff;
+    color: #341144;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -139,7 +141,7 @@ main {
 .game h2 {
     margin-top: 10px;
     font-size: 45px;
-    color: white;
+    color: #ffffff;
     text-align: center;
     font-family: 'Pixelify Sans', sans-serif;
 }
