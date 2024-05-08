@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <title></title>
@@ -28,15 +27,28 @@
           <div class="input-boxes">
             <div class="input-box">
               <i class="fas fa-envelope"></i>
-              <input id="loginEmail" type="text" placeholder="Enter your email" required>
+              <input
+              type="text"
+              id="loginEmail"
+              name="email"
+              [(ngModel)]="user.email"
+              placeholder="Enter your email"
+              required
+            />
             </div>
             <div class="input-box">
               <i class="fas fa-lock"></i>
-              <input id="loginPassword" type="password" placeholder="Enter your password" required>
+              <input
+              type="password"
+              id="loginPassword"
+              [(ngModel)]="user.password"
+              name="password"
+              placeholder="Enter your password"
+            />
             </div>
             <div class="text"><a href="#">Forgot password?</a></div>
             <div class="button input-box">
-              <input type="submit" value="Submit" onclick="login()">
+              <input type="submit"(click)="login()">
             </div>
             <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
           </div>
@@ -47,19 +59,28 @@
         <form id="registerForm">
           <div class="input-boxes">
             <div class="input-box">
-              <i class="fas fa-user"></i>
-              <input id="registerName" type="text" placeholder="Enter your name" required>
-            </div>
-            <div class="input-box">
               <i class="fas fa-envelope"></i>
-              <input id="registerEmail" type="text" placeholder="Enter your email" required>
+              <input
+              type="text"
+              id="registerEmail"
+              [(ngModel)]="user.email"
+              name = "email"
+              placeholder="Enter your email"
+              required
+            />
             </div>
             <div class="input-box">
               <i class="fas fa-lock"></i>
-              <input id="registerPassword" type="password" placeholder="Enter your password" required>
+              <input
+              type="password"
+              id="registerPassword"
+              [(ngModel)]="user.password"
+              name="Contraseña"
+              placeholder="Enter your password"
+            />
             </div>
             <div class="button input-box">
-              <input type="submit" value="Submit" onclick="register()">
+              <input type="submit" value="Submit" (click)="register()">
             </div>
             <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
           </div>
@@ -69,4 +90,4 @@
   </div>
 </div>
 </body>
-</html>
+

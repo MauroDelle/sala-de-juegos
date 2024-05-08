@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { User } from '../../interfaces/user';
+import { AuthService } from '../../services/auth.service';
+import Swal from 'sweetalert2';
+import { routes } from '../../../../app.routes';
 
 @Component({
   selector: 'app-register',
@@ -9,6 +12,34 @@ import { Router } from '@angular/router';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent{
+
+  user: User = {
+    email: '',
+    password: ''
+  };
+
+  constructor(private AuthService: AuthService, private router: Router){}
+
+  register() {
+    const { email, password } = this.user;
+    this.AuthService.register( email, password ).then( res => {
+      Swal.fire('Registrado Correctamente');
+      this.login();
+    }).catch((error) => {
+      Swal.fire(error.message);
+      return null;
+    });
+  }
+
+  login() {
+    const { email, password } = this.user;
+    this.AuthService.login( email, password ).then( res => {
+      Swal.fire('Bienvenido!');
+      this.router.navigateByUrl('/home');
+    }, error => {
+      Swal.fire(error.message);
+    });
+  }
 
 
 
