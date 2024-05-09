@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgComponentOutlet } from '@angular/common';
+import { AuthService } from '../../auth/services/auth.service';
+
 
 @Component({
   selector: 'app-home',
@@ -10,10 +12,9 @@ import { CommonModule, NgComponentOutlet } from '@angular/common';
 })
 export class HomeComponent {
 
-
   loadingAboutMe: boolean = false;
 
-  constructor() { }
+  constructor(private AuthService: AuthService) { }
 
   loadAboutMe() {
     this.loadingAboutMe = true; // Activar la animación de carga
@@ -22,6 +23,14 @@ export class HomeComponent {
     }, 2000);
   }
 
+  logout() {
+    this.AuthService.logout().then(() => {
+      // Manejar cualquier lógica adicional después de cerrar sesión, como redirigir al usuario a la página de inicio.
+    }).catch((error) => {
+      // Manejar errores, si los hay.
+      console.error(error);
+    });
+  }
 
 
 }
