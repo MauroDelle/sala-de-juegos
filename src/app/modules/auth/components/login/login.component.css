@@ -199,13 +199,15 @@ html, body {
 
 .forms .form-content .button {
   color: #fff;
-  margin-top: 40px;
+  margin-top: 30px;
 }
+
 
 .forms .form-content .button input {
   color: #fff;
   background: #7d2ae8;
   border-radius: 6px;
+  margin-top: 1px;
   padding: 0;
   cursor: pointer;
   transition: all 0.4s ease;
