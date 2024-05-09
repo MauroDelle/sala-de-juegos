@@ -105,6 +105,14 @@ nav ul li:first-child {
     background-position: center; /* Centra la imagen */
 }
 
+.about-me .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
 .profile-picture img {
     border-radius: 50%;
     width: 200px;
@@ -125,4 +133,58 @@ nav ul li:first-child {
 .description p {
     font-size: 16px;
     line-height: 1.6;
+}
+
+.game-image {
+    max-width: 900px; /* Asegura que la imagen no sea más ancha que su contenedor */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.9s ease;
+    margin: 20px auto 0; /* Agrega un espacio superior */
+    border-radius: 20px;
+}
+
+
+.game.image-container{
+    position: relative; /* Establece una posición relativa para el contenedor */
+    width: 400px; /* Ajusta el tamaño del contenedor según sea necesario */
+    height: auto;
+    margin: 0 auto;
+    perspective: 1000px; /* Agrega perspectiva para el efecto 3D */
+}
+
+.game-image:hover{
+    transform: rotateY(180deg);
+}
+
+.game-image img {
+    width: 100%;
+    height: auto;
+}
+
+
+.game-description {
+    position: absolute;
+    top: 120%; /* Coloca el borde superior del elemento en el centro vertical */
+    left: 50%; /* Coloca el borde izquierdo del elemento en el centro horizontal */
+    transform: translate(-50%, -50%); /* Centra el elemento completamente */
+    max-width: 60%; /* Ajusta el ancho del texto según sea necesario */
+    height: 250px; /* Deja que la altura del texto se ajuste automáticamente */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.46);
+    color: black;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.game-image-container:hover .game-image {
+    transform: rotateY(180deg);
+}
+
+.game-image-container:hover .game-description {
+    display: flex;
 }
