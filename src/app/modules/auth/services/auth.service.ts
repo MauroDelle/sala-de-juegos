@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, user } from '@angular/fire/auth';
+import { Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, user } from '@angular/fire/auth';
 import { Firestore, collection, addDoc, and } from '@angular/fire/firestore';
 
 
@@ -43,25 +43,6 @@ export class AuthService{
     }
   }
 
-
-  // async login(email: string, password: string) {
-  //   try {
-  //     const res = await signInWithEmailAndPassword(this.auth, email, password);
-  //     if (res.user) {
-  //       const date = new Date();
-  //       const timestamp = date.getTime();
-
-  //       const loginLogCollection = collection(this.firestore, 'loginLog');
-  //       await addDoc(loginLogCollection, {
-  //         email,
-  //         date: timestamp,
-  //       });
-  //     }
-  //     return res;
-  //   } catch (error) {
-  //     throw error;
-  //   }
-  // }
 
   public isLoggedIn(): Promise<boolean>
   {

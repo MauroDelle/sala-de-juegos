@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgComponentOutlet } from '@angular/common';
 import { AuthService } from '../../auth/services/auth.service';
-
+import Swal from 'sweetalert2';
+import { Observable, of, from} from 'rxjs';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
