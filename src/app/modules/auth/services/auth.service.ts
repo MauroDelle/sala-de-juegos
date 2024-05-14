@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, user } from '@angular/fire/auth';
 import { Firestore, collection, addDoc, and } from '@angular/fire/firestore';
+import { FirestoreService } from '../../../core/services/firestore.service';
 
 
 @Injectable({
@@ -55,7 +56,7 @@ export class AuthService{
 
   getLoggedUser()
   {
-    return this.auth.authStateReady();
+    return this.auth.currentUser;
   }
 
   logout()

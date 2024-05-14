@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AhorcadoComponent } from './components/ahorcado/ahorcado.component';
+
+import { MayorMenorComponent } from './components/mayor-menor/mayor-menor.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AhorcadoComponent,
+    component: MayorMenorComponent,
   },
 ];
 
@@ -13,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AhorcadoRoutingModule { }
+export class MayorMenorRoutingModule { }

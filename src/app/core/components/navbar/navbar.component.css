@@ -1,0 +1,27 @@
+header {
+  background-color: #7d2ae8;
+  color: #341144;
+  padding: 10px 0;
+  margin: 10px;
+  border-radius: 20px;
+  font-family: 'Press Start 2P' cursive;
+  position: relative;
+  overflow: hidden;
+  animation: wave 2s infinite alternate;
+  box-shadow: 0 0 10px rgb(191, 46, 244);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #341144;
+}
+
+
+.header-content h1{
+  font-family: 'Pixelify Sans', sans-serif;
+}

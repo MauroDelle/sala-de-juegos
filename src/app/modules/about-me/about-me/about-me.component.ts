@@ -21,12 +21,12 @@ export class AboutMeComponent {
 
   constructor(private authService: AuthService) { }
 
-  ngOnInit(): void {
-    this.authService.getLoggedUser().then(user => {
-      console.log(user);
-    }).catch(error => {
-      console.error(error);
-    });
-  }
+  // ngOnInit(): void {
+  //   this.authService.getLoggedUser().then(user => {
+  //     console.log(user);
+  //   }).catch(error => {
+  //     console.error(error);
+  //   });
+  // }
 
 }
