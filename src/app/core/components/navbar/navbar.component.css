@@ -1,3 +1,18 @@
+  .pikachu{
+
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+  left: 50%;
+  transform: translate(-100%, -60%);
+  transition: transform 0.3s;
+}
+
+.pikachu:hover {
+  transform: translate(-100%, -60%) scale(1.9); /* Escala Pikachu al 120% del tamaño original */
+}
+
 header {
   background-color: #7d2ae8;
   color: #341144;
@@ -11,6 +26,18 @@ header {
   box-shadow: 0 0 10px rgb(191, 46, 244);
 }
 
+@keyframes wave {
+  0% {
+    border-radius: 30px; /* Inicio de la animación: borde normal */
+  }
+  50% {
+    border-radius: 50px; /* Mitad de la animación: borde redondeado */
+  }
+  100% {
+      border-radius: 20px; /* Fin de la animación: borde normal */
+    }
+  }
+
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -21,7 +48,28 @@ header {
   color: #341144;
 }
 
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+}
+
+nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  color: #341144;
+  font-size: 17px;
+  margin-right: 150px; /* Ajusta este valor según sea necesario */
+}
 
 .header-content h1{
   font-family: 'Pixelify Sans', sans-serif;
 }
+
+

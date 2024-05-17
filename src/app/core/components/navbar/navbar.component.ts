@@ -1,18 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../modules/auth/services/auth.service';
 import Swal from 'sweetalert2';
+import { Observable } from 'rxjs';
+import { User } from '@angular/fire/auth'; // Asegúrate de importar el tipo User
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  loggedUser$: Observable<User | null>;
 
-  loggedUser = this.authService.getLoggedUser();
+  constructor(private authService: AuthService, private router: Router) {
+    this.loggedUser$ = this.authService.user$; // Asigna el observable del servicio
+  }
 
-  constructor(private authService: AuthService, private router: Router){}
+  ngOnInit(): void {}
 
   logout(): void {
     Swal.fire({
@@ -21,27 +26,24 @@ export class NavbarComponent {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, nos vemos!',
+      confirmButtonText: 'Sí, nos vemos!',
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.authService.logout().then( res => {
+        this.authService.logout().then(() => {
           this.router.navigateByUrl('/login');
-        }, err => {
-          Swal.fire(err);
-        }
-        );
+        }).catch(err => {
+          Swal.fire('Error', err.message, 'error');
+        });
       }
-    })
+    });
   }
 
-  goHome() {
+  goHome(): void {
     this.router.navigateByUrl('/home');
   }
 
-  goAboutMe() {
+  goAboutMe(): void {
     this.router.navigateByUrl('/about-me');
   }
-
-
 }

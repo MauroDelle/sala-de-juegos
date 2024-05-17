@@ -11,7 +11,6 @@ import { AboutMeComponent } from '../about-me/about-me/about-me.component';
   declarations: [
     LoginComponent,
     RegisterComponent,
-    AboutMeComponent,
   ],
   imports: [
     CommonModule,
@@ -21,7 +20,6 @@ import { AboutMeComponent } from '../about-me/about-me/about-me.component';
   exports: [
     LoginComponent,
     RegisterComponent,
-    AboutMeComponent,
   ]
 })
 export class AuthModule { }

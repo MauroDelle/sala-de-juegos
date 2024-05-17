@@ -13,24 +13,7 @@ body {
     padding: 20px;
 }
 
-/* Estilos para el encabezado */
-header {
-    position: fixed;
-    top: 10px;
-    left: 0;
-    z-index: 1000;
-    background-color: #7d2ae8;
-    color: #341144;
-    padding: 10px 20px; /* Aumentamos el espacio interior */
-    margin: 10px; /* Eliminamos el margen superior e inferior */
-    border-radius: 20px;
-    font-family: 'Pixelify Sans', sans-serif;
-    position: relative;
-    overflow: hidden;
-    animation: wave 2s infinite alternate;
-    box-shadow: 0 0 10px rgba(191, 46, 244, 0.5);
-    transition: top 0.3s;
-}
+
 
 
 .header-content {
@@ -97,7 +80,7 @@ nav ul li a {
 nav ul li:first-child {
     margin-left: 0; /* Eliminamos el margen izquierdo del primer enlace */
 }
-  
+
 /* Estilos para la sección "About Me" */
 .about-me {
     padding: 50px 0;

@@ -8,7 +8,6 @@ import { ResultadosBalloonComponent } from "./components/resultados-balloon/resu
 
 
 @NgModule({
-
   declarations: [
     NavbarComponent,
     ChatComponent,

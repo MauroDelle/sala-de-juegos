@@ -1,18 +1,21 @@
 import { Injectable } from "@angular/core";
-import { Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, user } from '@angular/fire/auth';
+import { Auth, User, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, user } from '@angular/fire/auth';
 import { Firestore, collection, addDoc, and } from '@angular/fire/firestore';
-import { FirestoreService } from '../../../core/services/firestore.service';
+import { Observable } from "rxjs";
+
 
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService{
+  user$: Observable<User | null>;
 
   constructor(
     private auth: Auth,
     private firestore : Firestore,
-  ){}
+
+  ){this.user$ = authState(this.auth);}
 
   async register(email: string, password: string): Promise<any> {
     try {
@@ -54,15 +57,12 @@ export class AuthService{
     });
   }
 
-  getLoggedUser()
-  {
+  getLoggedUser(): User | null {
     return this.auth.currentUser;
   }
 
-  logout()
-  {
+  logout(): Promise<void> {
     return this.auth.signOut();
   }
-
 
 }

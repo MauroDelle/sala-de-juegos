@@ -1,0 +1,37 @@
+.main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+
+#wordSpotlight {
+  font-size: 30px;
+}
+
+
+/* Keep it simple - improvement would be to not display characters */
+.letter {
+  display: inline-block;
+  list-style: none;
+  width: 20px;
+  margin: 0 5px;
+  border-bottom: 1px solid black;
+  text-align: center;
+  color: white;
+}
+.current-word {
+  list-style: none;
+}
+.output {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+
+.btn-reset {
+  bottom: 0;
+}

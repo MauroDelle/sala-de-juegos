@@ -1,11 +1,31 @@
-
-        <div class="header-content">
-            <h1>Arcade Center</h1>
-            <img src="../../../../assets/imgs/pikachu.gif" alt="Pikachu" class="pikachu">
-            <nav>
-                <ul>
-                    <li><a href="/about-me">About Me</a></li>
-                    <li><a href="#" (click)="logout()">Cerrar Sesión</a></li>
-                </ul>
-            </nav>
-        </div>
+<header>
+  <nav class="navbar">
+    <div class="header-content">
+      <a class="nav-brand ms-3" (click)="goHome()">
+        <img src="../../../../assets/imgs/pikachu.gif" class="pikachu" alt="Pikachu" />
+        <h1 id="nav-title" class="nav-title">Sala de Juegos</h1>
+      </a>
+      <ul>
+        <li>
+          <a class="about-me" (click)="goAboutMe()">Acerca de mi</a>
+        </li>
+        <li *ngIf="loggedUser$ | async as user">
+          <a id="userProfile" class="navbar-brand">
+            <img
+              *ngIf="user.photoURL"
+              [src]="user.photoURL"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt=""
+            />
+            {{ user.email }}
+          </a>
+        </li>
+        <li *ngIf="loggedUser$ | async as user">
+          <a id="btnLogOut" class="nes-btn is-error me-3" (click)="logout()">Cerrar sesión</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
