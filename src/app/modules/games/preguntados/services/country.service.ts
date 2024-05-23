@@ -15,13 +15,23 @@ export class CountryService{
 
   //function to fetch a list of countries
   //function to fetch a list of countries with flags and names
-  getCountries(): Observable<any[]>{
+  getCountries(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl).pipe(
-
-    )
+      map((data: any[]) => {
+        return data.map((country) => ({
+          flag: country.flags.png,
+          // name: country.name.common , // Use Spanish name if available
+          name: country.translations.spa.official
+        }));
+      })
+    );
   }
 
 
-
-
+  getCountry(alpha3Code: string): Observable<any> {
+    const url = `${this.apiUrl}/alpha/${alpha3Code}`;
+    return this.http.get<any>(url);
+  }
 }
+
+

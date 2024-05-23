@@ -1,1 +1,21 @@
-<p>preguntados works!</p>
+<app-navbar></app-navbar>
+<div class="nes-container is-dark text-center main-container flag-quiz">
+
+  <div>
+    <h1 class="nes-text is-error">Preguntados</h1>
+    <h3>¿A qué país pertenece la bandera?</h3>
+  </div>
+
+  <p>{{ questionsAnswered }} / 25</p>
+
+  <img class="flag" [src]="flagUrl" alt="Flag" />
+
+  <div class="options">
+    <div *ngFor="let option of options; let i = index">
+      <a class="nes-btn is-warning" (click)="checkAnswer(i)">{{ option }}</a>
+    </div>
+  </div>
+
+  <p>Aciertos: <span class="nes-text is-success">{{ userScore }}</span></p>
+</div>
+<app-chat></app-chat>

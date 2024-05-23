@@ -26,6 +26,14 @@ const routes: Routes = [
     path: 'games/mayor-menor',
     loadChildren: () => import('./modules/games/mayor-menor/mayor-menor.module').then((m) => m.MayorMenorModule),
   },
+  {
+    path: 'games/buscaminas',
+    loadChildren: () => import('./modules/games/buscaminas/buscaminas.module').then((m) => m.BuscaminasModule),
+  },
+  {
+    path: 'games/preguntados',
+    loadChildren: () => import('./modules/games/preguntados/preguntados.module').then((m) => m.PreguntadosModule),
+  },
 ];
 
 @NgModule({
