@@ -30,13 +30,13 @@ export class AuthService{
     try {
       const res = await signInWithEmailAndPassword(this.auth, email, password);
       if (res.user) {
-        const date = new Date();
-        const timestamp = date.getTime();
-  
+        const now = new Date();
+        const date = now.toISOString().split('T')[0]; // Extract only the date part
+    
         const loginLogCollection = collection(this.firestore, 'loginLog');
         await addDoc(loginLogCollection, {
           email,
-          date: timestamp,
+          date: date, // Store only the date in YYYY-MM-DD format
         }).then(() => {
           console.log("Log entry successfully written!");
         }).catch((error) => {
@@ -50,7 +50,7 @@ export class AuthService{
     }
   }
   
-
+  
 
   public isLoggedIn(): Promise<boolean>
   {
