@@ -14,12 +14,13 @@
 }
 
 header {
+  
   background-color: #7d2ae8;
   color: #341144;
   padding: 10px 0;
   margin: 10px;
   border-radius: 20px;
-  font-family: 'Press Start 2P' cursive;
+  font-family: 'Pixelify Sans', sans-serif;
   position: relative;
   overflow: hidden;
   animation: wave 2s infinite alternate;
@@ -43,6 +44,7 @@ header {
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
+  font-family: 'Pixelify Sans', sans-serif;
   margin: 0 auto;
   padding: 0 20px;
   color: #341144;
@@ -51,17 +53,19 @@ header {
 nav ul {
   list-style-type: none;
   margin: 0;
+  font-family: 'Pixelify Sans', sans-serif;
   padding: 5px;
 }
 
 nav ul li {
-
+  font-family: 'Pixelify Sans', sans-serif;
   display: inline;
   margin-left: 20px;
 }
 
 nav ul li a {
   color: #fff;
+  font-family: 'Pixelify Sans', sans-serif;
   text-decoration: none;
   font-weight: bold;
   color: #341144;

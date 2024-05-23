@@ -29,23 +29,27 @@ export class AuthService{
   async login(email: string, password: string) {
     try {
       const res = await signInWithEmailAndPassword(this.auth, email, password);
-      if (!res.user) {
+      if (res.user) {
         const date = new Date();
-        const timestamp = date.getTime(); // Use getTime() for timestamp
-
-        // Updated Firestore usage (assuming proper setup)
+        const timestamp = date.getTime();
+  
         const loginLogCollection = collection(this.firestore, 'loginLog');
         await addDoc(loginLogCollection, {
           email,
           date: timestamp,
+        }).then(() => {
+          console.log("Log entry successfully written!");
+        }).catch((error) => {
+          console.error("Error writing log entry: ", error);
         });
       }
-        return res;
+      return res;
     } catch (error) {
-      console.log("Error");
+      console.log("Error", error);
       throw error;
     }
   }
+  
 
 
   public isLoggedIn(): Promise<boolean>

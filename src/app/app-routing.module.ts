@@ -11,10 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('./modules/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'games/ahorcado',
-    loadChildren: () => import('./modules/games/ahorcado/ahorcado.module').then((m) => m.AhorcadoModule),
-  },
-  {
     path: 'about-me',
     loadChildren: () => import('./modules/about-me/about-me.module').then((m) => m.AboutMeModule),
   },

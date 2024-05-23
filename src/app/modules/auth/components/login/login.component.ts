@@ -27,7 +27,7 @@ export class LoginComponent{
 
   register() {
     const { email, password } = this.user;
-    Swal.fire(email, password);
+    // Swal.fire(email, password);
     this.AuthService.register(email, password).then( res => {
       Swal.fire('Registrado Correctamente');
       this.login();
